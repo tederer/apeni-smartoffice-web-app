@@ -1,0 +1,28 @@
+{
+  "name": "smartoffice-spa",
+  "version": "0.33.0",
+  "description": "web frontend of the smartOffice product",
+  "author": {
+    "name": "Thomas Ederer",
+    "email": "2210781006@fh-burgenland.at"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.1",
+    "grunt": "^1.6.1",
+    "grunt-contrib-clean": "2.x",
+    "grunt-contrib-concat": "2.x",
+    "grunt-contrib-jshint": "3.x",
+    "keycloak-connect": "^21.1.1",
+    "string-replace-middleware": "^1.0.2"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/grunt && node src/Main.js",
+    "lint": "npm install && ./node_modules/.bin/grunt lint"
+  }
+}

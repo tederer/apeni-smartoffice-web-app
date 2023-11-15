@@ -1,0 +1,18 @@
+[
+  {
+    "bookingNumber": "Y24U62m61ajUCGFT_QQCdgkkoEFncqC41V7fNDVM",
+    "startDateTime": "2023-10-22T14:20:00Z",
+    "endDateTime": "2023-10-22T16:20:00Z",
+    "firstName": "Thomas",
+    "lastName": "Ederer",
+    "userName": "tederer",
+    "workspaceNumber": "workspace-001",
+    "activated": false,
+    "invitationSent": false,
+    "createdUtc": "2023-10-22T14:23:40.5824622Z",
+    "creator": "tederer",
+    "modifiedUtc": "2023-10-22T14:23:40.5824622Z",
+    "modifier": "tederer"
+  }
+]
+
