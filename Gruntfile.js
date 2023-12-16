@@ -25,7 +25,17 @@ module.exports = function(grunt) {
       },
 
       clean: [JS_FOLDER_IN_WEBROOT],
-      
+
+      mochaTest: {
+			libRaw: {
+            options: {
+               require: ['./test/testGlobals.js'],
+               reporter: 'spec'
+            },
+			  src: ['test/**/*.js']
+			}
+      },
+
       concat: {
          javascripts: {
             src: ['src/common/**/*.js', 'src/client/**/*.js'],
@@ -96,9 +106,11 @@ module.exports = function(grunt) {
 
    grunt.loadNpmTasks('grunt-contrib-jshint');
    grunt.loadNpmTasks('grunt-contrib-clean');
+   grunt.loadNpmTasks('grunt-mocha-test');
    grunt.loadNpmTasks('grunt-contrib-concat');
    
    grunt.registerTask('lint', ['jshint']);
-   
-   grunt.registerTask('default', ['clean', 'lint', 'concat', 'correctConcatenatedFile']);
+   grunt.registerTask('test', ['mochaTest:libRaw']);
+
+   grunt.registerTask('default', ['clean', 'lint', 'test', 'concat', 'correctConcatenatedFile']);
  };
