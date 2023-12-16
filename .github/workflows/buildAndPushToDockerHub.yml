@@ -3,11 +3,10 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DOCKER_HUB_USER: ${{secrets.DOCKER_HUB_USER}}
+      DOCKER_HUB_PASSWORD: ${{secrets.DOCKER_HUB_USER}}
     steps:
-      env:
-        DOCKER_HUB_USER: ${{secrets.DOCKER_HUB_USER}}
-        DOCKER_HUB_PASSWORD: ${{secrets.DOCKER_HUB_USER}}
-
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -19,4 +18,4 @@ jobs:
       - run: ./buildDockerImage.sh
       - run: echo docker login -u $DOCKER_HUB_USER --password-stdin
       - run: echo foobar | docker login -u $DOCKER_HUB_USER --password-stdin
-      - run: echo DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USER --password-stdin
+      - run: echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USER --password-stdin
