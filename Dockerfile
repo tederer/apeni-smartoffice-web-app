@@ -1,6 +1,6 @@
 FROM node:18.18-alpine
 
-USER node:node
+USER 1000:1000
 
 WORKDIR /home/node/app
 
