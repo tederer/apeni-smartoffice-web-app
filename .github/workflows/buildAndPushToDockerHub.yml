@@ -12,3 +12,4 @@ jobs:
       - run: npm audit
       - run: npm run lint
       - run: npm run test
+      - run: buildDockerImage.sh
