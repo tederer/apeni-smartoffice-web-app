@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_HUB_USER: ${{secrets.DOCKER_HUB_USER}}
-      DOCKER_HUB_PASSWORD: ${{secrets.DOCKER_HUB_USER}}
+      DOCKER_HUB_PASSWORD: ${{secrets.DOCKER_HUB_PASSWORD}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
