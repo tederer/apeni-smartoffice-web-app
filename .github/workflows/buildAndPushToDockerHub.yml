@@ -17,6 +17,6 @@ jobs:
       - run: npm run test
       - run: ./buildDockerImage.sh
       - run: echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USER --password-stdin
-      - run: echo docker push tederer/apeni-smartoffice-web-app:$(jq -r '.version' package.json)
+      - run: docker push tederer/apeni-smartoffice-web-app:$(jq -r '.version' package.json)
       - run: docker logout
       - run: rm -f /home/runner/.docker/config.json 
