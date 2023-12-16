@@ -17,5 +17,4 @@ jobs:
       - run: npm run test
       - run: ./buildDockerImage.sh
       - run: echo docker login -u $DOCKER_HUB_USER --password-stdin
-      - run: echo foobar | docker login -u $DOCKER_HUB_USER --password-stdin
       - run: echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USER --password-stdin
