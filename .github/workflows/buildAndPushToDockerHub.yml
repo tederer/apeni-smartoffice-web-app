@@ -13,3 +13,4 @@ jobs:
       - run: npm run lint
       - run: npm run test
       - run: ./buildDockerImage.sh
+      - run: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
