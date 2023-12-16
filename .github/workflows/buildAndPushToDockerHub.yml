@@ -16,6 +16,6 @@ jobs:
       - run: npm run lint
       - run: npm run test
       - run: version=$(jq -r '.version' package.json)
-      - run: echo 'version: '$version
+      - run: echo version: $version
       - run: ./buildDockerImage.sh
       - run: echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USER --password-stdin
